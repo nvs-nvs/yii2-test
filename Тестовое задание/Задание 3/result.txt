@@ -1,0 +1,56 @@
+Array
+(
+    [app] => Array
+        (
+            [module] => Asterisk
+            [ext] => Array
+                (
+                    [count] => 4
+                    [list] => Array
+                        (
+                            [a101] => from-context
+                            [a102] => from-context
+                            [a103] => from-trunk
+                            [a104] => from-context
+                        )
+
+                )
+
+            [trunk] => Array
+                (
+                    [count] => 2
+                    [list] => Array
+                        (
+                            [g240] => 10.10.10.240
+                            [g241] => 10.10.10.240
+                        )
+
+                )
+
+            [routes] => Array
+                (
+                    [out] => Array
+                        (
+                            [krd] => Array
+                                (
+                                    [a] => g240
+                                    [b] => g241
+                                )
+
+                            [nsk] => Array
+                                (
+                                    [a] => g240
+                                )
+
+                        )
+
+                )
+
+            [server] => Array
+                (
+                    [ip] => 10.10.30.3
+                )
+
+        )
+
+)
