@@ -16,7 +16,7 @@ use Yii;
 class NetworkRecord extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * имя таблицы
      */
     public static function tableName()
     {
@@ -24,7 +24,7 @@ class NetworkRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * правила валидации
      */
     public function rules()
     {
@@ -37,7 +37,7 @@ class NetworkRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * аттрибуты
      */
     public function attributeLabels()
     {
@@ -49,18 +49,10 @@ class NetworkRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * связь ко многим
      */
     public function getAgencies()
     {
-        return $this->hasMany(Agency::className(), ['agency_network_id' => 'agency_network_id']);
-    }
-
-    public function transactions()
-    {
-        return [
-            //always enclose updates in a transaction
-            \yii\base\Model::SCENARIO_DEFAULT => self::OP_INSERT,
-        ];
+        return $this->hasMany(AgencyRecord::className(), ['agency_network_id' => 'agency_network_id']);
     }
 }

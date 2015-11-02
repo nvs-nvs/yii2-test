@@ -5,7 +5,8 @@
  * Date: 12.10.2015
  * Time: 14:33
  */
-<div>
+<
+div >
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 

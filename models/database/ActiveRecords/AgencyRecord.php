@@ -2,7 +2,9 @@
 
 namespace app\models\database\ActiveRecords;
 
+use app\models\database\BillingSave;
 use Yii;
+
 
 /**
  * This is the model class for table "agency".
@@ -18,7 +20,7 @@ use Yii;
 class AgencyRecord extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * Имя таблицы
      */
     public static function tableName()
     {
@@ -26,7 +28,7 @@ class AgencyRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * правила валидации
      */
     public function rules()
     {
@@ -39,7 +41,7 @@ class AgencyRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * Аттрибуды
      */
     public function attributeLabels()
     {
@@ -52,28 +54,22 @@ class AgencyRecord extends \yii\db\ActiveRecord
     }
 
     /**
+     * Связь к одному
      * @return \yii\db\ActiveQuery
      */
     public function getAgencyNetwork()
     {
-        return $this->hasOne(AgencyNetwork::className(), ['agency_network_id' => 'agency_network_id']);
+        return $this->hasOne(NetworkRecord::className(), ['agency_network_id' => 'agency_network_id']);
     }
 
     /**
+     * Связь ко многим
      * @return \yii\db\ActiveQuery
      */
     public function getBillings()
     {
-        return $this->hasMany(Billing::className(), ['agency_id' => 'agency_id']);
+        return $this->hasMany(BillingRecord::className(), ['agency_id' => 'agency_network_id'])
+            ->viaTable('agency_network', ['agency_id' => 'agency_id']);
     }
-
-    public function transactions()
-    {
-        return [
-            //always enclose updates in a transaction
-            \yii\base\Model::SCENARIO_DEFAULT => self::OP_INSERT,
-        ];
-    }
-
 
 }

@@ -17,7 +17,7 @@ use Yii;
 class BillingRecord extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * имя таблицы
      */
     public static function tableName()
     {
@@ -25,7 +25,7 @@ class BillingRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * правила валидации. Не указаны, так как приходят свалидированные данные из базы
      */
     public function rules()
     {
@@ -34,34 +34,24 @@ class BillingRecord extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * аттрибуты
      */
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'agency_id' => 'Agency ID',
-            'user_id' => 'User ID',
-            'date' => 'Date',
+//            'id' => 'ID',
+//            'agency_id' => 'Agency ID',
+//            'user_id' => 'User ID',
+//            'date' => 'Date',
             'amount' => 'Amount',
         ];
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * связь к одному
      */
     public function getAgency()
     {
-        return $this->hasOne(Agency::className(), ['agency_id' => 'agency_id']);
+        return $this->hasOne(AgencyRecord::className(), ['agency_id' => 'agency_id']);
     }
-
-    public function transactions()
-    {
-        return [
-            //always enclose updates in a transaction
-            \yii\base\Model::SCENARIO_DEFAULT => self::OP_INSERT,
-        ];
-    }
-
-
 }

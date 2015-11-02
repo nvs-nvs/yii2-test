@@ -37,6 +37,7 @@ AppAsset::register($this);
                     ['label' => 'Работа с формами', 'url' => ['/site/index']],
                     ['label' => 'Работа с базой данных', 'url' => ['/site/data']],
                     ['label' => 'Работа с регулярными выражениями', 'url' => ['/site/regexp']],
+                    ['label' => 'Сводная таблица', 'url' => ['/site/list']],
                     ],
                     ]);
             NavBar::end();

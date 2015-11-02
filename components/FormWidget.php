@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: 1
- * Date: 08.10.2015
- * Time: 9:11
+ *Виджет для actionIndex с формами ввода чисел
  */
 namespace app\components;
 use yii\base\Widget;

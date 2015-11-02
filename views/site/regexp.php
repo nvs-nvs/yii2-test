@@ -1,6 +1,9 @@
 <?php
 use yii\widgets\ActiveForm;
-/* @var $this yii\web\View
+/**
+ * Представление для actionRegexp
+ * форма ввода файла
+ * @var $this yii\web\View
 */
 $this->title = 'Работа с базой данных';
 ?>

@@ -1,11 +1,14 @@
 <?php
 use yii\widgets\ActiveForm;
-/* @var $this yii\web\View
+/** Представление для actionData
+ * Форма отправки трех файлов
+ * @var $this yii\web\View
+ *
  */
 $this->title = 'Загрузка в базу';
 ?>
 <div>
-    <p>Все три файла: agency_network.txt, agency.txt и billing.txt обязателены к отправке</p>
+    <p>Разрешена только отправка трех файлов вместе: agency_network.txt, agency.txt и billing.txt</p>
     <br>
     <?php $form = ActiveForm::begin([
         'options' =>

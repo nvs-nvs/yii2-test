@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: 1
- * Date: 08.10.2015
- * Time: 9:22
+ * Представление от виджета FormWidget с полями для ввода чисел
  */
 ?>
 <div class="site-index">

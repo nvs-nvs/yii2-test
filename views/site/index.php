@@ -1,5 +1,6 @@
 <?php
-/* @var $this yii\web\View
+/** Представления для actionIndex
+ * @var $this yii\web\View
  * @var $result string
  */
 use app\components\FormWidget;
